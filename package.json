@@ -1,0 +1,19 @@
+{
+  "name": "testcafe-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "testcafe": "^3.5.0",
+    "testcafe-reporter-allure": "^1.0.5",
+    "testcafe-reporter-html": "^1.4.6"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.4.0"
+  }
+}
