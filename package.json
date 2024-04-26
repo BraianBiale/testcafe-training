@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "testcafe"
+    "test": "testcafe",
+    "test:meta": "sh -c 'testcafe chrome --fixture-meta fixtureId=$0 --test-meta testId=$1'"
   },
   "author": "",
   "license": "ISC",
