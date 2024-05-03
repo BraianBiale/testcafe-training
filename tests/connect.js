@@ -30,5 +30,7 @@ test.meta({ testId: "t-0002" })(
       .eql("LA")
 
     await checkBorderRadiusStyles(t, connectPage.userAvatarContainer, '50%')
+    await t.expect(connectPage.userNameContainer.getStyleProperty("font-weight")).eql("600")
+    .expect(connectPage.userUsernameContainer.getStyleProperty("font-weight")).eql("300")
   }
 );
