@@ -22,7 +22,7 @@ class HomePage {
         this.removeFirstImageBtn = Selector('div:nth-of-type(2) > div > div > div > div > div > div:nth-child(2) > div:nth-child(1) > button')
         this.uploadImagesContainer = Selector('div:nth-of-type(2) > div > div > div > div > div > div:nth-child(2)')
         this.feedContainer = Selector('div > main > div:nth-child(2)')
-        this.infiniteLoadSpinner = Selector('main > div:nth-of-type(2) > div > :only-child')
+        this.infiniteLoadSpinner = Selector('main > div:nth-of-type(2) > div > :only-child').with({ visibilityCheck: true })
         this.infiniteLoadFirstNewPost = Selector('main > div:nth-child(2) > div:nth-child(22)')
         this.showMoreRecommendedUserLink = XPathSelector("//div[2]/div/div[2]/a")
     }

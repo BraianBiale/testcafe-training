@@ -1,4 +1,4 @@
-import {userOne} from "./roles/roles"
+import { userOne } from "./roles/roles"
 import homePage from "./pages/HomePage";
 import profilePage from "./pages/ProfilePage";
 import loginPage from "./pages/LoginPage";
@@ -6,12 +6,12 @@ import connectPage from "./pages/ConnectPage";
 
 const data = require("./data/data.json")
 
-fixture.meta({fixtureId: "f-0001"})("Home fixture").beforeEach(async t => {
+fixture.meta({ fixtureId: "f-0003" })("Home fixture").beforeEach(async t => {
     await t.useRole(userOne)
     await t.navigateTo(`${data.baseUrl}/`);
 });
 
-test("maximun characters on tweet creation should show an error", async t => {
+test.meta({ testId: "t-0001" })("maximun characters on tweet creation should show an error", async t => {
     await t.click(homePage.createTweetBtn)
         .typeText(homePage.newTweetModalTextArea, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu1")
         .click(homePage.submitNewTweetModalBtn)
@@ -104,11 +104,12 @@ test("if user click logout option then should be redirect to login page and not 
 // can't get the loader element
 test("if user scroll to bottom of feed should see a loader and more posts should load", async t => {
     await t.scroll(homePage.feedContainer, 'bottom')
+        .scrollBy(homePage.feedContainer, 0, 50)
         .expect(homePage.infiniteLoadSpinner.getStyleProperty("animation")).eql("1.5s linear 0s infinite normal none running spinner;")
         .expect(homePage.infiniteLoadFirstNewPost.exists).ok()
 })
 
-test.meta({testId: "t-0012"})("if user click 'Show More' option should redirect to connect screen with recommended users", async t => {
+test.meta({ testId: "t-0012" })("if user click 'Show More' option should redirect to connect screen with recommended users", async t => {
     await t.click(homePage.showMoreRecommendedUserLink)
         .expect(connectPage.pageTitle.textContent).eql("Connect")
 })
