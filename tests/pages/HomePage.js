@@ -8,7 +8,6 @@ class HomePage {
         this.newTweetModalTextArea = Selector("div > textarea").withAttribute("placeholder", "What's happening?")
         this.submitNewTweetModalBtn = Selector('#root button').withText('Tweet').nth(1)
         this.newTweetModalCharsErrorLabel = Selector('#root label').withText('Post should be between 1 and 240 characters')
-        // is this selector ok? is too specific
         this.tweetWith241CharsContainer = Selector('main div').withText('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu1')
         this.uploadImageInput = Selector('#file-input')
         this.newTweetModalImagesUploadedErrorLabel = Selector('#root label').withText("Post should have 4 or fewer images")

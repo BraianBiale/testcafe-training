@@ -13,6 +13,7 @@ class ConnectPage {
     this.userUsernameContainer = XPathSelector(
       "//main/div/div/div[1]/div/div[2]/div[2]"
     );
+    this.userFollowBtn = Selector("div:nth-of-type(1) > button[mode='follow']")
   }
 }
 

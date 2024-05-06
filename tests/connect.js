@@ -32,5 +32,9 @@ test.meta({ testId: "t-0002" })(
     await checkBorderRadiusStyles(t, connectPage.userAvatarContainer, '50%')
     await t.expect(connectPage.userNameContainer.getStyleProperty("font-weight")).eql("600")
     .expect(connectPage.userUsernameContainer.getStyleProperty("font-weight")).eql("300")
+    .expect(connectPage.userFollowBtn.exists).ok()
+    .expect(connectPage.userFollowBtn.textContent).eql("Follow")
+    .expect(connectPage.userFollowBtn.getStyleProperty("background-color")).eql("rgb(0, 0, 0)")
+    .expect(connectPage.userFollowBtn.getStyleProperty("color")).eql("rgb(255, 255, 255)")
   }
 );
